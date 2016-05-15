@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mge-Rw-G7B">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="PY4-1N-P2S">
+            <objects>
+                <viewController id="mge-Rw-G7B" customClass="FXDGMainViewController" customModule="FXDGVitalSignsMonitor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P1E-dY-1lc"/>
+                        <viewControllerLayoutGuide type="bottom" id="ln5-Px-Y3T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="w5w-Se-zSn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z46-du-oHJ">
+                                <rect key="frame" x="333" y="37" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="XmC-NO-AmZ"/>
+                                    <constraint firstAttribute="height" constant="22" id="y2c-MM-QJB"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="addMoveView:" destination="mge-Rw-G7B" eventType="touchUpInside" id="nmi-lY-fdp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qS-5f-SsK">
+                                <rect key="frame" x="41" y="124" width="90" height="45"/>
+                                <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
+                                <state key="normal" title="心电图" backgroundImage="switch_on_bg">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="eyI-7S-6rd" kind="show" id="6Nc-aE-ImT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Z46-du-oHJ" secondAttribute="trailing" constant="20" id="4Kh-oD-7u2"/>
+                            <constraint firstItem="Z46-du-oHJ" firstAttribute="top" secondItem="P1E-dY-1lc" secondAttribute="bottom" constant="17" id="LQS-G9-Sqe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="KIK-mx-d1i"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OHO-kM-4Tp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2460.5" y="-111.5"/>
+        </scene>
+        <!--FXDGHeartRateCurveVC-->
+        <scene sceneID="xlt-dT-B2e">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FXDGHeartRateCurveVC" id="eyI-7S-6rd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Voa-H3-ohG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2941" y="-111"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="switch_on_bg" width="77" height="27"/>
+    </resources>
+</document>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1713" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="naV-cc-5K5">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--心电图-->
+        <scene sceneID="ciG-nG-TVs">
+            <objects>
+                <viewController title="心电图" id="naV-cc-5K5" customClass="FXDGHeartRateCurveVC" customModule="FXDGVitalSignsMonitor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Oa9-Gx-UyT"/>
+                        <viewControllerLayoutGuide type="bottom" id="6lz-Os-GHd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Mst-ze-pYz">
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5YP-ft-18h" customClass="FXDGHeartRateCurveView" customModule="FXDGVitalSignsMonitor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="547" height="311"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLY-jt-aRs">
+                                <rect key="frame" x="547" y="64" width="120" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="wb3-Po-cu6"/>
+                                </constraints>
+                                <state key="normal" title="暂  停" backgroundImage="buttonBackground">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="开  始"/>
+                                <connections>
+                                    <action selector="startBtnClick:" destination="naV-cc-5K5" eventType="touchUpInside" id="kx0-Bh-Bt7"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zat-e4-RZJ">
+                                <rect key="frame" x="547" y="109" width="120" height="60"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="buttonBackground" translatesAutoresizingMaskIntoConstraints="NO" id="qkk-wn-fee">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="60"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="采集速率" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWa-O2-HIq">
+                                        <rect key="frame" x="26" y="5" width="68" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FWJ-8N-e9F">
+                                        <rect key="frame" x="0.0" y="26" width="120" height="34"/>
+                                        <state key="normal" title="25mm/s">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="qkk-wn-fee" firstAttribute="leading" secondItem="Zat-e4-RZJ" secondAttribute="leading" id="38j-kx-cZ8"/>
+                                    <constraint firstAttribute="trailing" secondItem="FWJ-8N-e9F" secondAttribute="trailing" id="3ad-p0-xQA"/>
+                                    <constraint firstItem="FWJ-8N-e9F" firstAttribute="top" secondItem="tWa-O2-HIq" secondAttribute="bottom" id="5Gf-Fj-cza"/>
+                                    <constraint firstAttribute="height" constant="60" id="Ceo-aZ-MlB"/>
+                                    <constraint firstAttribute="bottom" secondItem="qkk-wn-fee" secondAttribute="bottom" id="CvI-eo-hFP"/>
+                                    <constraint firstAttribute="trailing" secondItem="qkk-wn-fee" secondAttribute="trailing" id="HwZ-wM-hwc"/>
+                                    <constraint firstItem="tWa-O2-HIq" firstAttribute="centerX" secondItem="Zat-e4-RZJ" secondAttribute="centerX" id="KyA-jP-uum"/>
+                                    <constraint firstAttribute="bottom" secondItem="FWJ-8N-e9F" secondAttribute="bottom" id="dCK-au-xic"/>
+                                    <constraint firstItem="tWa-O2-HIq" firstAttribute="top" secondItem="Zat-e4-RZJ" secondAttribute="top" constant="5" id="oKG-5O-UIQ"/>
+                                    <constraint firstItem="qkk-wn-fee" firstAttribute="top" secondItem="Zat-e4-RZJ" secondAttribute="top" id="sgs-co-mUX"/>
+                                    <constraint firstItem="FWJ-8N-e9F" firstAttribute="leading" secondItem="Zat-e4-RZJ" secondAttribute="leading" id="zbM-pB-VZi"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0NW-b5-vRB">
+                                <rect key="frame" x="547" y="169" width="120" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="0b4-iT-BdH"/>
+                                </constraints>
+                                <state key="normal" title="扫描模式" backgroundImage="buttonBackground">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="位移模式"/>
+                                <connections>
+                                    <action selector="refreshTypeBtnClick:" destination="naV-cc-5K5" eventType="touchUpInside" id="SW8-Nc-zPl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0NW-b5-vRB" firstAttribute="top" secondItem="Zat-e4-RZJ" secondAttribute="bottom" id="1pm-vg-o8V"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0NW-b5-vRB" secondAttribute="trailing" constant="-20" id="9wT-tX-a4g"/>
+                            <constraint firstAttribute="trailing" secondItem="5YP-ft-18h" secondAttribute="trailing" constant="120" id="I7L-Qo-ERw"/>
+                            <constraint firstAttribute="trailing" secondItem="Zat-e4-RZJ" secondAttribute="trailing" id="P22-Hr-bIP"/>
+                            <constraint firstItem="5YP-ft-18h" firstAttribute="top" secondItem="Oa9-Gx-UyT" secondAttribute="bottom" id="UNe-wb-J2k"/>
+                            <constraint firstItem="vLY-jt-aRs" firstAttribute="top" secondItem="Oa9-Gx-UyT" secondAttribute="bottom" id="Uvz-lB-dan"/>
+                            <constraint firstAttribute="trailing" secondItem="vLY-jt-aRs" secondAttribute="trailing" id="V6c-iX-Hcq"/>
+                            <constraint firstItem="Zat-e4-RZJ" firstAttribute="leading" secondItem="5YP-ft-18h" secondAttribute="trailing" id="ZkD-Yr-tnV"/>
+                            <constraint firstItem="Zat-e4-RZJ" firstAttribute="top" secondItem="vLY-jt-aRs" secondAttribute="bottom" id="bMe-kC-Wug"/>
+                            <constraint firstItem="6lz-Os-GHd" firstAttribute="top" secondItem="5YP-ft-18h" secondAttribute="bottom" id="f7w-lk-Dyi"/>
+                            <constraint firstItem="vLY-jt-aRs" firstAttribute="leading" secondItem="5YP-ft-18h" secondAttribute="trailing" id="gGI-Qw-as5"/>
+                            <constraint firstItem="5YP-ft-18h" firstAttribute="leading" secondItem="Mst-ze-pYz" secondAttribute="leading" id="lQQ-FH-9zc"/>
+                            <constraint firstItem="0NW-b5-vRB" firstAttribute="leading" secondItem="5YP-ft-18h" secondAttribute="trailing" id="o1b-OM-Fc2"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="heartRateCurveView" destination="5YP-ft-18h" id="tsD-Ir-aRh"/>
+                        <outlet property="refreshTypeBtn" destination="0NW-b5-vRB" id="phD-Vo-KXD"/>
+                        <outlet property="startButton" destination="vLY-jt-aRs" id="lif-Ld-gNX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Rp-nC-veq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1201.5" y="278.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="buttonBackground" width="51" height="51"/>
+    </resources>
+</document>
